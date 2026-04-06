@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🥊 ABDOUL HAMID CISSÉ - JO DAKAR 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@media print {
+  body { margin: 0; padding: 0; background: white; }
+  .no-print { display: none !important; }
+  .badge-card, .badge-back { 
+    box-shadow: none !important;
+    page-break-after: avoid;
+  }
+}
+
+body {
+  background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f1929 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 20px;
+  font-family: 'Poppins', sans-serif;
+  gap: 40px;
+  overflow-x: hidden;
+}
+
+/* ════════════════════════════════════════════════════════ */
+/* HEADER */
+/* ════════════════════════════════════════════════════════ */
+
+.header {
+  text-align: center;
+  animation: fadeInDown 0.8s ease-out;
+}
+
+.header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 50%, #ff6b35 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -1px;
+  margin-bottom: 10px;
+  text-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+}
+
+.header p {
+  color: #a0c8f4;
+  font-size: 1.1rem;
+  letter-spacing: 3px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.badge-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #ff6b35, #ffd700);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-top: 15px;
+  animation: pulse 2s infinite;
+}
+
+/* ════════════════════════════════════════════════════════ */
+/* CONTAINER & CARDS */
+/* ════════════════════════════════════════════════════════ */
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: start;
+  perspective: 1200px;
+  max-width: 900px;
+}
+
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+.badge-card {
+  width: 360px;
+  height: 570px;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 
+    0 30px 80px rgba(0, 0, 0, 0.3),
+    0 0 60px rgba(255, 215, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  position: relative;
+  transform-origin: center;
+  animation: slideInUp 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border: 2px solid rgba(255, 215, 0, 0.3);
+}
+
+/* Holographic effect background */
+.badge-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(45deg, transparent 30%, rgba(255, 215, 0, 0.05) 50%, transparent 70%),
+    linear-gradient(-45deg, transparent 30%, rgba(255, 107, 53, 0.03) 50%, transparent 70%);
+  pointer-events: none;
+  animation: shimmer 3s infinite;
+}
+
+/* ════════════════════════════════════════════════════════ */
+/* BADGE TOP SECTION */
+/* ════════════════════════════════════════════════════════ */
+
+.badge-top {
+  height: 100px;
+  background: linear-gradient(135deg, #0f5f1f 0%, #1a9e3e 40%, #ff6b35 100%);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-bottom: 4px solid #ffd700;
+}
+
+.badge-top::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.15), transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(255, 107, 53, 0.1), transparent 50%);
+  pointer-events: none;
+}
+
+.badge-top::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent 70%);
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite;
+}
+
+.badge-event {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 3px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: 'Courier Prime', monospace;
+  position: relative;
+  z-index: 2;
+}
+
+.badge-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 900;
+  color: white;
+  line-height: 1;
+  letter-spacing: -1px;
+  position: relative;
+  z-index: 2;
+}
+
+.badge-title .year {
+  color: #ffd700;
+  display: inline-block;
+  margin-left: 8px;
+  animation: glow 2s ease-in-out infinite;
+}
+
+.badge-subtitle {
+  font-size: 8px;
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 2px;
+  font-family: 'Courier Prime', monospace;
+  position: relative;
+  z-index: 2;
+  font-weight: 600;
+}
+
+/* ════════════════════════════════════════════════════════ */
+/* PHOTO SECTION */
+/* ════════════════════════════════════════════════════════ */
+
+.photo-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  overflow: visible;
+}
+
+.photo-frame {
+  width: 160px;
+  height: 160px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 
+    0 20px 50px rgba(0, 0, 0, 0.2),
+    inset 0 0 30px rgba(255, 215, 0, 0.1),
+    0 0 40px rgba(255, 107, 53, 0.25);
+  border: 4px solid #ffd700;
+  animation: photoFloat 3s ease-in-out infinite;
+  transform: translateZ(0);
+}
+
+.photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  animation: photoZoom 0.8s ease-out;
+}
+
+.photo-frame::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), transparent);
+  pointer-events: none;
+  border-radius: 16px;
+}
+
+/* Mascot */
+.mascot {
+  position: absolute;
+  bottom: -15px;
+  right: -10px;
+  font-size: 70px;
+  animation: bounce 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+  filter: drop-shadow(0 8px 15px rgba(0, 0, 0, 0.3));
+}
+
+/* ════════════════════════════════════════════════════════ */
+/* ATHLETE INFO */
+/* ════════════════════════════════════════════════════════ */
+
+.athlete-info {
+  padding: 15px 24px 0;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.athlete-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 900;
+  color: #0f5f1f;
+  margin-bottom: 4px;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+}
+
+.athlete-sport {
+  font-size: 13px;
+  font-weight: 800;
+  color: #ff6b35;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  margin-bottom: 6px;
+  font-family: 'Courier Prime', monospace;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 8px;
+}
+
+.athlete-sport::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ff6b35, transparent);
+}
+
+.athlete-birth {
+  font-size: 9px;
+  color: #555;
+  font-weight: 600;
+  margin-bottom: 3px;
+  letter-spacing: 0.5px;
+}
+
+.athlete-country {
+  font-size: 11px;
+  color: #0f5f1f;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.country-flag {
+  font-size: 20px;
+  display: inline-block;
+}
+
+/* ════════════════════════════════════════════════════════ */
+/* CREDENTIALS */
+/* ════════════════════════════════════════════════════════ */
+
+.credentials {
+  padding: 12px 20px;
+  margin: 10px 0;
+  background: linear-gradient(135deg, rgba(0, 95, 31, 0.05), rgba(255, 107, 53, 0.05));
+  border-radius: 12px;
+  border: 1px solid rgba(255, 215, 0, 0.15);
+}
+
+.cred-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 8px;
+  padding: 4px 0;
+  font-family: 'Courier Prime', monospace;
+  border-bottom: 1px dotted rgba(0, 0, 0, 0.1);
+}
+
+.cred-row:last-child {
+  border-bottom: none;
+}
+
+.cred-label {
+  color: #ff6b35;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cred-value {
+  color: #0f5f1f;
+  font-weight: 700;
+}
+
+/* ════════════════════════════════════════════════════════ */
+/* BADGE RIBBON */
+/* ════════════════════════════════════════════════════════ */
+
+.badge-ribbon {
+  position: absolute;
+  top: 12px;
+  right: -30px;
+  background: linear-gradient(135deg, #ff6b35, #ffd700);
+  color: white;
+  font-size: 9px;
+  font-weight: 900;
+  padding: 4px 35px;
+  transform: rotate(45deg);
+  letter-spacing: 1.5px;
+  font-family: 'Courier Prime', monospace;
+  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+  animation: ribbonTilt 3s ease-in-out infinite;
+}
+
+/* ════════════════════════════════════════════════════════ */
+/* FOOTER */
+/* ════════════════════════════════════════════════════════ */
+
+.badge-footer {
+  margin-top: auto;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #0f5f1f, #1a9e3e);
+  border-top: 2px solid #ffd700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-security {
+  font-size: 7px;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: 'Courier Prime', monospace;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.footer-logo {
+  font-size: 10px;
+  font-weight: 900;
+  color: #ffd700;
+  letter-spacing: 1px;
+  font-family: 'Playfair Display', serif;
+}
+
+/* ════════════════════════════════════════════════════════ */
+/* BACK CARD */
+/* ════════════════════════════════════════════════════════ */
+
+.badge-back {
+  width: 360px;
+  height: 570px;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 
+    0 30px 80px rgba(0, 0, 0, 0.3),
+    0 0 60px rgba(255, 107, 53, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  display: flex;
+  flex-direction: column;
+  animation: slideInUp 0.8s 0.1s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
+  border: 2px solid rgba(255, 215, 0, 0.3);
+}
+
+.back-header {
+  height: 80px;
+  background: linear-gradient(135deg, #1a9e3e 0%, #ff6b35 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  border-bottom: 3px solid #ffd700;
+  position: relative;
+  overflow: hidden;
+}
+
+.back-header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent 70%);
+  border-radius: 50%;
+  animation: float 8s ease-in-out infinite;
+}
+
+.mascot-icon {
+  font-size: 40px;
+  animation: spin 20s linear infinite;
+}
+
+.back-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 900;
+  color: white;
+  letter-spacing: 2px;
+  position: relative;
+  z-index: 2;
+}
+
+.back-content {
+  padding: 20px;
+  flex: 1;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #ffd700 #f0f0f0;
+}
+
+.section {
+  margin-bottom: 15px;
+}
+
+.section-title {
+  font-size: 9px;
+  color: #ff6b35;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: 'Courier Prime', monospace;
+  margin-bottom: 6px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #ff6b35;
+}
+
+.section-text {
+  font-size: 10px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.emergency-box {
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.15), rgba(255, 215, 0, 0.1));
+  border: 2px solid #ff6b35;
+  border-radius: 12px;
+  padding: 12px;
+  margin-top: 12px;
+}
+
+.emergency-title {
+  font-size: 9px;
+  font-weight: 800;
+  color: #ff6b35;
+  letter-spacing: 1.5px;
+  font-family: 'Courier Prime', monospace;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.emergency-text {
+  font-size: 9px;
+  color: #333;
+  line-height: 1.7;
+  font-weight: 600;
+}
+
+.back-footer {
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #0f5f1f, #1a9e3e);
+  border-top: 2px solid #ffd700;
+  text-align: center;
+  font-size: 8px;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: 'Courier Prime', monospace;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+/* ════════════════════════════════════════════════════════ */
+/* CONTROLS */
+/* ════════════════════════════════════════════════════════ */
+
+.controls {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 215, 0, 0.3);
+  padding: 25px;
+  border-radius: 15px;
+  max-width: 600px;
+  animation: fadeInUp 0.8s 0.3s ease-out backwards;
+  backdrop-filter: blur(10px);
+}
+
+.control-group {
+  margin-bottom: 20px;
+}
+
+.control-group label {
+  display: block;
+  color: #ffd700;
+  font-weight: 700;
+  font-family: 'Courier Prime', monospace;
+  letter-spacing: 1px;
+  font-size: 11px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.control-group input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid rgba(255, 215, 0, 0.3);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  transition: all 0.3s ease;
+}
+
+.control-group input:focus {
+  outline: none;
+  border-color: #ffd700;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+.control-group input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.button-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.btn {
+  padding: 13px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: 'Courier Prime', monospace;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: left 0.3s ease;
+  z-index: -1;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #ff6b35, #ffd700);
+  color: #0f5f1f;
+  box-shadow: 0 8px 20px rgba(255, 107, 53, 0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(255, 107, 53, 0.6);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, #0f5f1f, #1a9e3e);
+  color: #ffd700;
+  box-shadow: 0 8px 20px rgba(15, 95, 31, 0.4);
+}
+
+.btn-secondary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(15, 95, 31, 0.6);
+}
+
+/* ════════════════════════════════════════════════════════ */
+/* ANIMATIONS */
+/* ════════════════════════════════════════════════════════ */
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px) rotateX(10deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 25px rgba(255, 215, 0, 1);
+  }
+}
+
+@keyframes shimmer {
+  0%, 100% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+}
+
+@keyframes photoFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes photoZoom {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes ribbonTilt {
+  0%, 100% {
+    transform: rotate(45deg) translateY(0);
+  }
+  50% {
+    transform: rotate(45deg) translateY(-3px);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header no-print">
+  <h1>ABDOUL HAMID CISSÉ</h1>
+  <p>🥊 Boxeur Olympique 🇸🇳 Sénégal</p>
+  <div class="badge-badge">✨ JO Dakar 2026 ✨</div>
+</div>
+
+<!-- BADGE CARDS -->
+<div class="container">
+  <!-- FRONT BADGE -->
+  <div class="badge-card">
+    <div class="badge-ribbon">ATHLÈTE</div>
+    
+    <div class="badge-top">
+      <div class="badge-event">🥊 Boxeur Olympique</div>
+      <div class="badge-title">DAKAR <span class="year">2026</span></div>
+      <div class="badge-subtitle">Karangué JO • Sécurité</div>
+    </div>
+
+    <div class="photo-container">
+      <div class="photo-frame">
+        <img id="athletePhoto" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='grad'%3E%3Cstop offset='0%25' style='stop-color:%23ffd700;stop-opacity:0.2' /%3E%3Cstop offset='100%25' style='stop-color:%23ff6b35;stop-opacity:0.2' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='200' height='200' fill='url(%23grad)'/%3E%3Ccircle cx='100' cy='70' r='35' fill='%23666'/%3E%3Cellipse cx='100' cy='130' rx='40' ry='50' fill='%23777'/%3E%3Ctext x='100' y='165' text-anchor='middle' font-size='14' fill='%23999'%3EPhoto%3C/text%3E%3C/svg%3E" alt="Athlète">
+      </div>
+      <div class="mascot">🦁</div>
+    </div>
+
+    <div class="athlete-info">
+      <div class="athlete-name">ABDOUL HAMID<br>CISSÉ</div>
+      <div class="athlete-sport">Boxeur</div>
+      <div class="athlete-birth">Né 17.12.1994 • Thiaroye</div>
+      <div class="athlete-country">
+        <span class="country-flag">🇸🇳</span>
+        <span>Sénégal • Délégation SEN</span>
+      </div>
+
+      <div class="credentials">
+        <div class="cred-row">
+          <span class="cred-label">Accréditation</span>
+          <span class="cred-value">AHC-SEN-2026</span>
+        </div>
+        <div class="cred-row">
+          <span class="cred-label">Tracker</span>
+          <span class="cred-value">LoRaWAN/BLE</span>
+        </div>
+        <div class="cred-row">
+          <span class="cred-label">Zone</span>
+          <span class="cred-value">Dakar • A</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="badge-footer">
+      <div class="footer-security">SÉCURISÉ • LoRaWAN • BLE</div>
+      <div class="footer-logo">KARANGUÉ JO</div>
+    </div>
+  </div>
+
+  <!-- BACK BADGE -->
+  <div class="badge-back">
+    <div class="back-header">
+      <div class="mascot-icon">🦁</div>
+      <h2>KARANGUÉ JO 2026</h2>
+    </div>
+
+    <div class="back-content">
+      <div class="section">
+        <div class="section-title">🥊 ATHLÈTE OLYMPIQUE</div>
+        <div class="section-text">
+          <strong>Abdoul Hamid Cissé</strong> représente le Sénégal en boxe aux Jeux Olympiques de la Jeunesse. Athlète de haut niveau né à Thiaroye, il incarne l'excellence sportive sénégalaise.
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">📡 TECHNOLOGIE BADGE</div>
+        <div class="section-text">
+          Tracker <strong>LoRaWAN + BLE</strong> pour suivi en temps réel. Localisation hybride GPS + Beacons. Autonomie complète des Jeux. Mise à jour 30 secondes.
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">🚨 SÉCURITÉ ATHLÈTE</div>
+        <div class="section-text">
+          Appuyez bouton SOS 3 secondes → Alerte PC Sécurité avec position exacte. Zones couverte: Dakar, Diamniadio, Saly.
+        </div>
+      </div>
+
+      <div class="emergency-box">
+        <div class="emergency-title">🚑 CONTACTS URGENCE</div>
+        <div class="emergency-text">
+          <strong>PC Sécurité JO:</strong> +221 77 881 13 14<br>
+          <strong>SAMU:</strong> 1515 | <strong>Police:</strong> 17<br>
+          <strong>Secours rapide:</strong> 18
+        </div>
+      </div>
+    </div>
+
+    <div class="back-footer">
+      DAKAR 2026 • JEUX OLYMPIQUES DE LA JEUNESSE 🇸🇳
+    </div>
+  </div>
+</div>
+
+<!-- CONTROLS SECTION -->
+<div class="controls no-print">
+  <div class="control-group">
+    <label>📸 URL Photo Athlète</label>
+    <input type="text" id="photoUrl" placeholder="https://exemple.com/photo-boxeur.jpg">
+  </div>
+
+  <div class="button-group">
+    <button class="btn btn-primary" onclick="updatePhoto()">↻ Charger Photo</button>
+    <button class="btn btn-secondary" onclick="window.print()">🖨️ Imprimer</button>
+  </div>
+</div>
+
+<script>
+function updatePhoto() {
+  const url = document.getElementById('photoUrl').value;
+  if (url.trim()) {
+    document.getElementById('athletePhoto').src = url;
+    document.getElementById('athletePhoto').style.opacity = '0';
+    setTimeout(() => {
+      document.getElementById('athletePhoto').style.opacity = '1';
+      document.getElementById('athletePhoto').style.transition = 'opacity 0.6s ease-out';
+    }, 10);
+  } else {
+    alert('Mets l\'URL de la photo!');
+  }
+}
+
+document.getElementById('photoUrl').addEventListener('keypress', function(e) {
+  if (e.key === 'Enter') updatePhoto();
+});
+</script>
+
+</body>
+</html>
